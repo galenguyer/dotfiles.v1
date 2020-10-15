@@ -68,7 +68,7 @@ ZSH_THEME_RANDOM_CANDIDATES=( "jnrowe" "xiong-chiamiov-plus" "gentoo" "michelebo
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -127,3 +127,5 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
+
+PROMPT='%{$fg[yellow]%}%n%{$reset_color%}@%{$FG[033]%}%M%{$reset_color%}:%{$fg[green]%}%~%{$reset_color%}$(git_prompt_info)%(!.#.$) '
