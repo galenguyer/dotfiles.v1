@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/chef/.oh-my-zsh"
+export ZSH="${HOME}/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -107,22 +107,22 @@ fi
 export GPG_TTY=$(tty)
 
 # Install Ruby Gems to ~/.gems
-export GEM_HOME="$HOME/.gems"
-export PATH="$HOME/.gems/bin:$PATH"
+export GEM_HOME="${HOME}/.gems"
+export PATH="${HOME}/.gems/bin:$PATH"
 
 # set default provider for vagrant
 export VAGRANT_DEFAULT_PROVIDER=libvirt
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/chef/.miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+__conda_setup="$('${HOME}/.miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/home/chef/.miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/chef/.miniconda3/etc/profile.d/conda.sh"
+    if [ -f "${HOME}/.miniconda3/etc/profile.d/conda.sh" ]; then
+        . "${HOME}/.miniconda3/etc/profile.d/conda.sh"
     else
-        export PATH="/home/chef/.miniconda3/bin:$PATH"
+        export PATH="${HOME}/.miniconda3/bin:$PATH"
     fi
 fi
 unset __conda_setup
