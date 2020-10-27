@@ -129,3 +129,15 @@ unset __conda_setup
 # <<< conda initialize <<<
 
 PROMPT='%{$fg[yellow]%}%n%{$reset_color%}@%{$FG[033]%}%M%{$reset_color%}:%{$fg[green]%}%~%{$reset_color%}$(git_prompt_info)%(!.#.$) '
+
+function agentize {
+    INFO="\e[1m\e[93m"
+    RESET="\e[0m"
+    echo -e "${INFO}--->  Entering ssh-agent${RESET}"
+    ssh-agent zsh
+}
+
+if [[ "$(ssh-add -l 2> /dev/null)" == "The agent has no identities." ]] ; then
+    ssh-add ~/.ssh/id_ed25519
+    ssh-add ~/.ssh/id_rsa
+fi
