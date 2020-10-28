@@ -141,3 +141,9 @@ if [[ "$(ssh-add -l 2> /dev/null)" == "The agent has no identities." ]] ; then
     ssh-add ~/.ssh/id_ed25519
     ssh-add ~/.ssh/id_rsa
 fi
+
+# Add Rust to PATH
+export PATH="$HOME/.cargo/bin:$PATH"
+# Add Go to PATH
+export PATH="$PATH:/usr/local/go/bin"
+
